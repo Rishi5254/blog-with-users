@@ -7,8 +7,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Gugg Blog</h1>
-            <span class="subheading">A collection of random musings.</span>
+            <h1>Blogs Hub</h1>
+            <span class="subheading">A collection of Blogs</span>
           </div>
         </div>
       </div>
@@ -33,21 +33,19 @@
             <a href="#">{{post.author}}</a>
             on {{post.date}}
 
-            {% if not admin %}
-            <a href="{{url_for('delete_post', post_id=post.id) }}">✘</a>
+
           
           </p>
         </div>
         <hr>
-            {% endif %}
-        {% endfor %}
 
-          {% if not admin %}
+        {% endfor %}
+        {% if logged_in %}
         <!-- New Post -->
         <div class="clearfix">
           <a class="btn btn-primary float-right" href="{{url_for('add_new_post')}}">Create New Post</a>
         </div>
-          {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>
